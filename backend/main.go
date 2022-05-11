@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -21,7 +20,6 @@ var (
 func main() {
 
 	r := mux.NewRouter()
-	fmt.Println(apiKey)
 	mc := mail.NewMailClient(mailuser, mailpass)
 	c := airtable.Client{
 		APIKey: apiKey,
