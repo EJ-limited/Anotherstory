@@ -27,11 +27,6 @@ func main() {
 		APIKey: apiKey,
 		BaseID: "appk0cwYJZsoXanmK",
 	}
-
-	if err != nil {
-		log.Println("unable to create airtable client " + err.Error())
-		os.Exit(1)
-	}
 	aHandler := handlers.NewAuditionHandler(mc, &c)
 	r.HandleFunc("/register", aHandler.SignUP).Methods("POST")
 
