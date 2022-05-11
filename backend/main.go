@@ -9,6 +9,7 @@ import (
 	"github.com/ej-limited/auditions/handlers"
 	"github.com/ej-limited/auditions/pkg/mail"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 var (
@@ -27,8 +28,8 @@ func main() {
 	}
 	aHandler := handlers.NewAuditionHandler(mc, &c)
 	r.HandleFunc("/register", aHandler.SignUP).Methods("POST")
-
+	handler := cors.Default().Handler(r)
 	log.Println("starting server on 0.0.0.0:8080")
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Fatal(http.ListenAndServe(":8080", handler))
 
 }

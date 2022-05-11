@@ -15,6 +15,7 @@ require (
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/rs/cors v1.8.2 // indirect
 	go.uber.org/ratelimit v0.1.0 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 )
