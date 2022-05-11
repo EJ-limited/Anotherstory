@@ -10,7 +10,6 @@ import (
 	"github.com/ej-limited/auditions/handlers"
 	"github.com/ej-limited/auditions/pkg/mail"
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 )
 
 var (
@@ -20,10 +19,7 @@ var (
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+
 	r := mux.NewRouter()
 	fmt.Println(apiKey)
 	mc := mail.NewMailClient(mailuser, mailpass)
